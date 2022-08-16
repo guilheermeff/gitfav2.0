@@ -8,6 +8,11 @@ body {
   background-color: #06181C;
 }
 
+#page {
+  display: flex;
+  flex-direction: column;
+}
+
 table, a {
   color: aliceblue;
 }
