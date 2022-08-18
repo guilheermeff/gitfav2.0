@@ -4,13 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 62.5%; /* 10px */
+  --ff-font-general: 'Roboto', sans-serif;
+}
+
 body {
   background-color: #06181C;
+  font-family: var(--ff-font-general);
 }
 
 #page {
   display: flex;
   flex-direction: column;
+
+  gap: 9.0rem;
+
+  width: 85%;
+  margin: 10.0rem auto 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 16.0rem;
 }
 
 table, a {
