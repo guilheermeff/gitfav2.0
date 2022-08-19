@@ -14,7 +14,8 @@
   --cc-color-input: 	hsl(191, 65%, 7%);
   --cc-color-thead: hsl(194, 72%, 13%);
   --cc-color-bordertable: hsl(191, 31%, 42%);
-  --cc-color-rowtableEven: hlsa(191, 31%, 42%, 0.5);
+  --cc-color-rowtableOdd:	hsla(194, 64%, 6%, 0.5);
+  --cc-color-rowtableEven: hsla(191, 31%, 42%, 0.5);
   --cc-color-removebutton: 	hsl(355, 91%, 66%);
 }
 
@@ -136,7 +137,7 @@ tbody td {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: rgba(6, 22, 27, 0.5);;
+  background-color: var(--cc-color-rowtableOdd);
 }
 
 tbody tr:nth-child(even) {
