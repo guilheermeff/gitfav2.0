@@ -2,6 +2,7 @@
 class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
+    this.load()
   }
 
   load() {
@@ -11,7 +12,13 @@ class Favorites {
         name: 'Guilherme Fernandes',
         public_repos: 30,
         followers: 50
-      },{}]
+      },
+      {
+        login: 'juliuscaezarff',
+        name: 'Julius Caezar',
+        public_repos: 344,
+        followers: 16
+      }]
   }
 }
 
@@ -19,6 +26,25 @@ class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
     this.tbody = this.page.querySelector('table tbody')
+
+    this.addRow()
+  }
+
+  addRow() {
+    this.removeAllTr()
+    this.entries.forEach(user => {
+      const row = this.createRow()
+
+      row.querySelector('.user img').src = `https://github.com/${user.login}.png`
+      row.querySelector('.user img').alt = `imagem de ${user.name}`
+      row.querySelector('.user a').href = `https://github.com/${user.login}`
+      row.querySelector('.user p').textContent = user.name
+      row.querySelector('.user span').textContent = user.login
+      row.querySelector('.repositories').textContent = user.public_repos
+      row.querySelector('.followers').textContent = user.followers
+
+      this.tbody.append(row)
+    })
   }
 
   createRow() {
@@ -26,18 +52,14 @@ class FavoritesView extends Favorites {
 
     tr.innerHTML = `
     <td class="user">
-      <img src="https://github.com/guilheermeff.png" alt="Imagem de guilheermeff">
-      <a href="https://github.com/guilheermeff" target="_blank">
-        <p>Guilherme Fernandes</p>
-        <span>/guilheermeff</span>
+      <img src="" alt="">
+      <a href="" target="_blank">
+        <p></p>
+        <span></span>
       </a>
     </td>
-    <td class="repositories">
-      76
-    </td>
-    <td class="followers">
-      9589
-    </td>
+    <td class="repositories"></td>
+    <td class="followers"></td>
     <td class="action">
       <button class="remove">&times;</button>
     </td>  
