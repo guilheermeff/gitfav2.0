@@ -7,7 +7,7 @@ class Favorites {
   }
 
   load() {
-    console.log(GithubUser.search('guilheermeff'))
+    this.entries = []
     // this.entries = [
     //   {
     //     login: 'guilheermeff',
@@ -22,15 +22,25 @@ class Favorites {
     //     followers: 16
     //   }]
   }
+
+  async add(user) {
+    const userReturn = await GithubUser.search(user)
+    
+    this.entries = [userReturn, ...this.entries]
+    this.update()
+
+    // CONTINUAR DAQUI 20/08/2022
+  }
 }
 
 class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
     this.tbody = this.page.querySelector('table tbody')
+    this.addRow()
   }
 
-  addRow() {
+  update() {
     this.removeAllTr()
     this.entries.forEach(user => {
       const row = this.createRow()
@@ -45,6 +55,16 @@ class FavoritesView extends Favorites {
 
       this.tbody.append(row)
     })
+  }
+
+  addRow() {
+    const entry = this.page.querySelector('input')
+    const favButton = this.page.querySelector('button')
+    
+    favButton.onclick = () => {
+      const username = entry.value
+      this.add(username)
+    }
   }
 
   createRow() {
