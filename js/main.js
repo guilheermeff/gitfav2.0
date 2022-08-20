@@ -4,23 +4,23 @@ class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
     this.load()
-    GithubUser.search('guilheermeff')
   }
 
   load() {
-    this.entries = [
-      {
-        login: 'guilheermeff',
-        name: 'Guilherme Fernandes',
-        public_repos: 30,
-        followers: 50
-      },
-      {
-        login: 'juliuscaezarff',
-        name: 'Julius Caezar',
-        public_repos: 344,
-        followers: 16
-      }]
+    console.log(GithubUser.search('guilheermeff'))
+    // this.entries = [
+    //   {
+    //     login: 'guilheermeff',
+    //     name: 'Guilherme Fernandes',
+    //     public_repos: 30,
+    //     followers: 50
+    //   },
+    //   {
+    //     login: 'juliuscaezarff',
+    //     name: 'Julius Caezar',
+    //     public_repos: 344,
+    //     followers: 16
+    //   }]
   }
 }
 
@@ -28,8 +28,6 @@ class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
     this.tbody = this.page.querySelector('table tbody')
-
-    this.addRow()
   }
 
   addRow() {
