@@ -1,8 +1,10 @@
+import { GithubUser } from "./Githubuser.js";
 // classe da logica dos dados
 class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
     this.load()
+    GithubUser.search('guilheermeff')
   }
 
   load() {

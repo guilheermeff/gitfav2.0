@@ -8,7 +8,12 @@ export class GithubUser {
       
       { login, name, public_repos, followers } = userObject
     
-      // CONTINUAR DAQUI 19/08
+      return {
+				login: login,
+				name: name,
+				public_repos: public_repos,
+				followers: foloowers
+			}
     })
   }
 }
