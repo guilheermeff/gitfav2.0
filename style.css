@@ -12,7 +12,7 @@
   --cc-color-favbutton: hsl(195, 91%, 25%);
   --cc-colorplaceholder: hsl(240, 6%, 51%);
   --cc-color-input: 	hsl(191, 65%, 7%);
-  --cc-color-thead: hsl(194, 72%, 13%);
+  --cc-color-thead: hsl(195, 89%, 14%);
   --cc-color-bordertable: hsl(191, 31%, 42%);
   --cc-color-rowtableOdd:	hsla(194, 64%, 6%, 0.5);
   --cc-color-rowtableEven: hsla(191, 100%, 76%, 0.1);
@@ -29,6 +29,10 @@ body {
 body .user span {
   font-weight: 400;
 }
+
+body::-webkit-scrollbar {}
+body::-webkit-scrollbar-track {}
+body::-webkit-scrollbar-thumb {}
 
 #page {
   display: flex;
@@ -98,6 +102,13 @@ aside button:hover {
   cursor: pointer;
 
   transition: 200ms;
+}
+
+.content {
+  max-width: 112.0rem;
+  max-height: 68.8rem;
+
+  overflow-y: scroll;
 }
 
 table {
