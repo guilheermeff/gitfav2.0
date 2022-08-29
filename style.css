@@ -17,6 +17,7 @@
   --cc-color-rowtableOdd:	hsla(194, 64%, 6%, 0.5);
   --cc-color-rowtableEven: hsla(191, 31%, 42%, 0.5);
   --cc-color-removebutton: 	hsl(355, 91%, 66%);
+  --cc-color-font: 	hsl(240, 9%, 89%);
 }
 
 body {
@@ -37,6 +38,12 @@ body .user span {
   margin: 11.5rem auto 0;
 
   max-width: 112.0rem;
+}
+
+.user span,
+.user p,
+tr {
+  color: var(--cc-color-font);
 }
 
 header {
@@ -85,10 +92,21 @@ button span {
   line-height: 2.4rem;
 }
 
+aside button:hover {
+  background-color: #FFFFFF;
+  color: var(--cc-color-favbutton);
+  cursor: pointer;
+
+  transition: 200ms;
+}
+
 table {
   border: 1px solid var(--cc-color-bordertable);
 
   border-radius: 1.2rem;
+
+  max-height: 68.8rem;
+  border-collapse: collapse;
 }
 
 table thead,
@@ -155,6 +173,14 @@ tbody tr:nth-child(even) {
   height: 5.6rem;
 }
 
+.user p {
+  font-weight: 700;
+}
+
+.user span {
+  font-weight: 400;
+}
+
 .user a {
   text-decoration: none;
 }
@@ -167,4 +193,8 @@ td {
 .action {
   color: var(--cc-color-removebutton);
   background: none;
+}
+
+button .remove {
+  outline: none;
 }

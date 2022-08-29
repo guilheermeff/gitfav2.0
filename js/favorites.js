@@ -48,6 +48,7 @@ export class FavoritesView extends Favorites {
     super(root)
     this.tbody = this.page.querySelector('table tbody')
     this.addRow()
+    this.update()
   }
 
   update() {
@@ -59,7 +60,7 @@ export class FavoritesView extends Favorites {
       row.querySelector('.user img').alt = `imagem de ${user.name}`
       row.querySelector('.user a').href = `https://github.com/${user.login}`
       row.querySelector('.user p').textContent = user.name
-      row.querySelector('.user span').textContent = user.login
+      row.querySelector('.user span').textContent = `/${user.login}`
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
 
@@ -98,7 +99,7 @@ export class FavoritesView extends Favorites {
     <td class="repositories"></td>
     <td class="followers"></td>
     <td class="action">
-      <button class="remove">&times;</button>
+      <button class="remove">Remover</button>
     </td>  
     `
     return tr
