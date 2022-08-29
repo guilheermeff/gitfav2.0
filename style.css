@@ -15,7 +15,7 @@
   --cc-color-thead: hsl(194, 72%, 13%);
   --cc-color-bordertable: hsl(191, 31%, 42%);
   --cc-color-rowtableOdd:	hsla(194, 64%, 6%, 0.5);
-  --cc-color-rowtableEven: hsla(191, 31%, 42%, 0.5);
+  --cc-color-rowtableEven: hsla(191, 100%, 76%, 0.1);
   --cc-color-removebutton: 	hsl(355, 91%, 66%);
   --cc-color-font: 	hsl(240, 9%, 89%);
 }
@@ -102,11 +102,9 @@ aside button:hover {
 
 table {
   border: 1px solid var(--cc-color-bordertable);
-
-  border-radius: 1.2rem;
-
-  max-height: 68.8rem;
   border-collapse: collapse;
+
+  margin-bottom: 15.0rem;
 }
 
 table thead,
@@ -160,6 +158,7 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
   background-color: var(--cc-color-rowtableEven);
+  border: 1px solid var(--cc-color-bordertable);
 }
 
 .user {
@@ -171,6 +170,8 @@ tbody tr:nth-child(even) {
 .user img {
   width: 5.6rem;
   height: 5.6rem;
+
+  border-radius: 50%;
 }
 
 .user p {
@@ -190,11 +191,10 @@ td {
   padding: 2.4rem 2.4rem 2.4rem 4.0rem;
 }
 
-.action {
+.action button {
   color: var(--cc-color-removebutton);
-  background: none;
-}
+  background-color: transparent;
 
-button .remove {
-  outline: none;
+  border: none;
+  cursor: pointer;
 }
