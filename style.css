@@ -30,9 +30,19 @@ body .user span {
   font-weight: 400;
 }
 
-body::-webkit-scrollbar {}
-body::-webkit-scrollbar-track {}
-body::-webkit-scrollbar-thumb {}
+::-webkit-scrollbar {
+  width: .6rem;               /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cc-color-bordertable);    /* color of the scroll thumb */
+  border-radius: 1.0rem;       /* roundness of the scroll thumb */
+  border: none;  /* creates padding around scroll thumb */
+}
 
 #page {
   display: flex;
@@ -105,17 +115,48 @@ aside button:hover {
 }
 
 .content {
-  max-width: 112.0rem;
-  max-height: 68.8rem;
-
-  overflow-y: scroll;
+  border: 1px solid var(--cc-color-bordertable);
+  border-radius: 1.2rem;
 }
 
 table {
-  border: 1px solid var(--cc-color-bordertable);
   border-collapse: collapse;
 
-  margin-bottom: 15.0rem;
+  max-width: 112.0rem;
+  max-height: 68.8rem;
+}
+
+table thead,
+table tbody {
+  display: block;
+}
+
+table thead {
+  border-top: 1px solid var(--cc-color-bordertable);
+  border-left: 1px solid var(--cc-color-bordertable);
+  border-right: 1px solid var(--cc-color-bordertable);
+
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+table tbody {
+  height: 100%;
+  max-height: 62.4rem;
+
+  overflow-y: scroll;
+  border-left: 1px solid var(--cc-color-bordertable);
+  border-right: 1px solid var(--cc-color-bordertable);
+  border-bottom: 1px solid var(--cc-color-bordertable);
+
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+
+table thead tr th:nth-child(1) {
+  border-radius: 1.2rem 0 0 0;
+}
+
+table thead tr th:nth-child(4) {
+  border-radius: 0 1.2rem 0 0;
 }
 
 table thead,
