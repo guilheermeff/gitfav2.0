@@ -30,18 +30,22 @@ body .user span {
   font-weight: 400;
 }
 
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
 ::-webkit-scrollbar {
-  width: .6rem;               /* width of the entire scrollbar */
+  width: .6rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--cc-color-bordertable);    /* color of the scroll thumb */
-  border-radius: 1.0rem;       /* roundness of the scroll thumb */
-  border: none;  /* creates padding around scroll thumb */
+  background-color: var(--cc-color-bordertable);
+  border-radius: 1.0rem;
+  border: none;
 }
 
 #page {
@@ -83,6 +87,11 @@ aside input {
 
   width: 46.2rem;
   height: 4.8rem;
+}
+
+aside input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
 
 aside button {

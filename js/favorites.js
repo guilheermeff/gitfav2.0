@@ -46,6 +46,7 @@ export class Favorites {
 export class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
+    this.entry = this.page.querySelector('input')
     this.tbody = this.page.querySelector('table tbody')
     this.addRow()
     this.update()
@@ -76,13 +77,18 @@ export class FavoritesView extends Favorites {
   }
 
   addRow() {
-    const entry = this.page.querySelector('input')
     const favButton = this.page.querySelector('button')
     
     favButton.onclick = () => {
-      const username = entry.value
+      const username = this.entry.value
       this.add(username)
+      this.clearInput()
     }
+  }
+
+  clearInput() {
+    const placeholder = this.entry.getAttribute('placeholder')
+    this.entry.value = placeholder
   }
 
   createRow() {
