@@ -123,6 +123,10 @@ form {
   transition: 200ms;
 }
 
+.add:hover path {
+  fill: var(--cc-color-favbutton);
+}
+
 .content {
   border: 1px solid var(--cc-color-bordertable);
   border-radius: 1.2rem;
@@ -152,7 +156,7 @@ table tbody {
   height: 100%;
   max-height: 62.4rem;
 
-  overflow-y: scroll;
+  overflow-y: auto;
   border-left: 1px solid var(--cc-color-bordertable);
   border-right: 1px solid var(--cc-color-bordertable);
   border-bottom: 1px solid var(--cc-color-bordertable);
