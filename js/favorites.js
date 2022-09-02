@@ -1,5 +1,4 @@
 import { GithubUser } from "./Githubuser.js"
-
 export class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
@@ -48,6 +47,7 @@ export class FavoritesView extends Favorites {
     super(root)
     this.entry = this.page.querySelector('input')
     this.tbody = this.page.querySelector('table tbody')
+
     this.addRow()
     this.update()
   }
@@ -71,7 +71,6 @@ export class FavoritesView extends Favorites {
           this.delete(user)
         }
       }
-
       this.tbody.append(row)
     })
   }
