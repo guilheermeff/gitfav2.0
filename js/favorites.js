@@ -82,13 +82,7 @@ export class FavoritesView extends Favorites {
     favButton.onclick = () => {
       const username = this.entry.value
       this.add(username)
-      this.clearInput()
     }
-  }
-
-  clearInput() {
-    const placeholder = this.entry.getAttribute('placeholder')
-    this.entry.value = placeholder
   }
 
   createRow() {

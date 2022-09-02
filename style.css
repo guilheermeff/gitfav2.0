@@ -71,11 +71,11 @@ header {
   height: 4.8rem;
 }
 
-aside {
+form {
   display: flex;
 }
 
-aside input {
+#username {
   font-size: 1.4rem;
 
   color: var(--cc-colorplaceholder);
@@ -89,12 +89,12 @@ aside input {
   height: 4.8rem;
 }
 
-aside input:focus {
+#username:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
 
-aside button {
+.add {
   background-color: var(--cc-color-favbutton);
   border: 0;
   border-radius: 5px;
@@ -110,12 +110,12 @@ aside button {
   gap: 0.8rem;
 }
 
-button span {
+.add span {
   font-size: 1.4rem;
   line-height: 2.4rem;
 }
 
-aside button:hover {
+.add:hover {
   background-color: #FFFFFF;
   color: var(--cc-color-favbutton);
   cursor: pointer;
