@@ -1,5 +1,5 @@
 import { GithubUser } from "./Githubuser.js"
-import { emptyMode } from "./emptyMode.js"
+// import { emptyMode } from "./emptyMode.js"
 export class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
@@ -48,9 +48,9 @@ export class FavoritesView extends Favorites {
     super(root)
     this.entry = this.page.querySelector('input')
     this.tbody = this.page.querySelector('table tbody')
-    this.empty = emptyMode()
+    // this.empty = emptyMode()
 
-    this.loadEmpty()
+    // this.loadEmpty()
     this.addRow()
     this.update()
   }
@@ -111,7 +111,7 @@ export class FavoritesView extends Favorites {
     this.tbody.querySelectorAll('tr').forEach(tr => {tr.remove()})
   }
 
-  loadEmpty() {
-    this.tbody.append(this.empty)
-  }
+  // loadEmpty() {
+  //   this.tbody.append(this.empty)
+  // }
 }
