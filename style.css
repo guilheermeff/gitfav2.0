@@ -8,6 +8,7 @@
   font-size: 62.5%; /* 10px */
 
   --ff-font-general: 'Roboto', sans-serif;
+  --ff-font-emptyMode: 'Roboto Mono', monospace;
 
   --cc-color-favbutton: hsl(195, 91%, 25%);
   --cc-colorplaceholder: hsl(240, 6%, 51%);
@@ -18,6 +19,7 @@
   --cc-color-rowtableEven: hsla(191, 100%, 76%, 0.1);
   --cc-color-removebutton: 	hsl(355, 91%, 66%);
   --cc-color-font: 	hsl(240, 9%, 89%);
+  --cc-color-emptyMode: hsl(189, 4%, 32%);
 }
 
 body {
@@ -56,6 +58,24 @@ input:focus::-webkit-input-placeholder {
   margin: 11.5rem auto 0;
 
   max-width: 112.0rem;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6.0rem;
+
+  height: 62.0rem;
+}
+
+.emptyMode {
+  font-size: 4.0rem;
+  color: var(--cc-color-emptyMode);
+
+  font-family: var(--ff-font-emptyMode);
+  line-height: 2.47rem;
 }
 
 .user span,
