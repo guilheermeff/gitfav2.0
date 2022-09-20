@@ -10,10 +10,10 @@ export class Favorites {
 
   load() {
     const laodLocalStorage = JSON.parse(localStorage.getItem('@gitfav-2.0:'))
-    const emptyArray = []
-    this.entries =  laodLocalStorage || emptyArray
     
-    if(laodLocalStorage[0] === undefined) {
+    this.entries =  laodLocalStorage || []
+
+    if(this.entries.length === 0) {
       this.tbody.append(this.empty)
     }
   }
