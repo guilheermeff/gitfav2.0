@@ -13,7 +13,7 @@ export class Favorites {
     const emptyArray = []
     this.entries =  laodLocalStorage || emptyArray
     console.log(this.entries)
-    
+    console.log(laodLocalStorage[0])
     if(laodLocalStorage[0] === undefined) {
       this.tbody.append(this.empty)
     }
@@ -35,6 +35,11 @@ export class Favorites {
       this.entries = [userReturn, ...this.entries]
       this.update()
       this.save()
+
+      if(this.entries.length === 1) {
+        this.tbody.removeChild(this.empty)
+      }
+
     } catch(error) {
       alert(error.message)
     }
@@ -78,6 +83,10 @@ export class FavoritesView extends Favorites {
         const confirmation = confirm('Tem certeza que deseja remover este usuário?')
         if(confirmation) {
           this.delete(user)
+
+          if(this.entries.length === 0) {
+            this.tbody.append(this.empty)
+          }
         }
       }
       this.tbody.append(row)
