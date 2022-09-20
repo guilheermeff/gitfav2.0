@@ -1,13 +1,22 @@
 import { GithubUser } from "./Githubuser.js"
-// import { emptyMode } from "./emptyMode.js"
+import { emptyMode } from "./emptyMode.js"
 export class Favorites {
   constructor(root) {
     this.page = document.querySelector(root)
+    this.tbody = this.page.querySelector('table tbody')
+    this.empty = emptyMode()
     this.load()
   }
 
   load() {
-    this.entries = JSON.parse(localStorage.getItem('@gitfav-2.0:')) || []
+    const laodLocalStorage = JSON.parse(localStorage.getItem('@gitfav-2.0:'))
+    const emptyArray = []
+    this.entries =  laodLocalStorage || emptyArray
+    console.log(this.entries)
+    
+    if(laodLocalStorage[0] === undefined) {
+      this.tbody.append(this.empty)
+    }
   }
 
   async add(user) {
@@ -47,10 +56,7 @@ export class FavoritesView extends Favorites {
   constructor(root) {
     super(root)
     this.entry = this.page.querySelector('input')
-    this.tbody = this.page.querySelector('table tbody')
-    // this.empty = emptyMode()
 
-    // this.loadEmpty()
     this.addRow()
     this.update()
   }
@@ -110,8 +116,4 @@ export class FavoritesView extends Favorites {
   removeAllTr() {
     this.tbody.querySelectorAll('tr').forEach(tr => {tr.remove()})
   }
-
-  // loadEmpty() {
-  //   this.tbody.append(this.empty)
-  // }
 }
